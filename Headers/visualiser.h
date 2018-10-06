@@ -9,7 +9,9 @@
 #ifndef VISUALISER_H
 #define VISUALISER_H
 
+#include "corewar.h"
 #include <SDL2/SDL.h>
+#include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
 
 #define MEMORY_SHARING 0
@@ -74,6 +76,7 @@ void cw_handle_event(SDL_Event *, _Bool *);
  * Grid functions
  */
 SDL_Color cw_player_color(unsigned char);
+void cw_fill_grid(unsigned char (*)[GRID_SIZE]);
 void cw_render_grid(t_frameset *, unsigned char (*)[GRID_SIZE]);
 
 /*
@@ -81,5 +84,10 @@ void cw_render_grid(t_frameset *, unsigned char (*)[GRID_SIZE]);
  */
 void cw_start_shared_mem(t_shared *);
 void cw_clean_shared_mem(t_shared *);
+
+/*
+ * Background functions
+ */
+void cw_render_bg(const char *);
 
 #endif

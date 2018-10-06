@@ -36,6 +36,11 @@ void cw_init(void)
         exit(1);
     }
 
+    if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == -1) {
+        fprintf(stderr, "Could not initialize SDL_img: %s\n", IMG_GetError());
+        exit(1);
+    }
+
     // Create the window context
     g_window = SDL_CreateWindow(WINDOW_TITLE,
                                 SDL_WINDOWPOS_UNDEFINED,
@@ -73,6 +78,7 @@ void cw_cleanup(void)
     SDL_DestroyWindow(g_window);
 
     // Quit libraries
+    IMG_Quit();
     TTF_Quit();
     SDL_Quit();
 }

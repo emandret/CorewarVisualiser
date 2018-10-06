@@ -26,20 +26,20 @@ int main(void)
     // Grid frameset
     t_frameset frameset = {{0, 0}, 0, 0};
 
-    while (!quit) {
+    // Initialize the grid
+    unsigned char grid[GRID_SIZE][GRID_SIZE];
 
+    while (!quit) {
         // Handle event and update quit condition if necessary
         cw_handle_event(&event, &quit);
 
-        // Initialize the grid
-        unsigned char grid[GRID_SIZE][GRID_SIZE];
+        // Render background
+        cw_render_bg("Images/bg.jpeg");
 
-        // Modify it
-        grid[0][0] = PLAYER_2;
-        grid[10][10] = PLAYER_1;
-        grid[25][25] = PLAYER_6;
+        // Fill the grid
+        cw_fill_grid(grid);
 
-        // Print it
+        // Display it
         cw_render_grid(&frameset, grid);
     }
 

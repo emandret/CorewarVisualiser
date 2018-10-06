@@ -11,6 +11,7 @@
 		88032BEE2167FF8A0026CD9E /* grid.c in Sources */ = {isa = PBXBuildFile; fileRef = 88032BED2167FF8A0026CD9E /* grid.c */; };
 		88032BF0216804B90026CD9E /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 88032BEF216804B90026CD9E /* init.c */; };
 		8833F2A22169280E0024DEC8 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 8833F2A12169280E0024DEC8 /* memory.c */; };
+		8878827821695E7400388FBC /* bg.c in Sources */ = {isa = PBXBuildFile; fileRef = 8878827721695E7400388FBC /* bg.c */; };
 		88FD7D95216811B50036B8A4 /* event.c in Sources */ = {isa = PBXBuildFile; fileRef = 88FD7D94216811B50036B8A4 /* event.c */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,8 @@
 		88032BED2167FF8A0026CD9E /* grid.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grid.c; sourceTree = "<group>"; };
 		88032BEF216804B90026CD9E /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
 		8833F2A12169280E0024DEC8 /* memory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		8878827721695E7400388FBC /* bg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bg.c; sourceTree = "<group>"; };
+		8878827D216960AA00388FBC /* bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpeg; sourceTree = "<group>"; };
 		88FD7D94216811B50036B8A4 /* event.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = event.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +54,7 @@
 		88032BD72167FED20026CD9E = {
 			isa = PBXGroup;
 			children = (
+				8878827C2169608900388FBC /* Images */,
 				88032BEA2167FF300026CD9E /* Headers */,
 				88032BE22167FED20026CD9E /* CorewarVisualiser */,
 				88032BE12167FED20026CD9E /* Products */,
@@ -73,6 +77,7 @@
 				88032BEF216804B90026CD9E /* init.c */,
 				88FD7D94216811B50036B8A4 /* event.c */,
 				8833F2A12169280E0024DEC8 /* memory.c */,
+				8878827721695E7400388FBC /* bg.c */,
 			);
 			path = CorewarVisualiser;
 			sourceTree = "<group>";
@@ -84,6 +89,14 @@
 				88032BEC2167FF520026CD9E /* corewar.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		8878827C2169608900388FBC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8878827D216960AA00388FBC /* bg.jpeg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +158,7 @@
 			files = (
 				88032BF0216804B90026CD9E /* init.c in Sources */,
 				88032BE42167FED20026CD9E /* main.c in Sources */,
+				8878827821695E7400388FBC /* bg.c in Sources */,
 				8833F2A22169280E0024DEC8 /* memory.c in Sources */,
 				88FD7D95216811B50036B8A4 /* event.c in Sources */,
 				88032BEE2167FF8A0026CD9E /* grid.c in Sources */,
@@ -269,6 +283,8 @@
 					SDL2,
 					"-framework",
 					SDL2_ttf,
+					"-framework",
+					SDL2_image,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -286,6 +302,8 @@
 					SDL2,
 					"-framework",
 					SDL2_ttf,
+					"-framework",
+					SDL2_image,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

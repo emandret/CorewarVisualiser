@@ -6,7 +6,6 @@
 //  Copyright © 2018 Edwy MANDRET. All rights reserved.
 //
 
-#include "corewar.h"
 #include "visualiser.h"
 #include <errno.h>
 #include <stdio.h>
