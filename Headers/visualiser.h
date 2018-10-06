@@ -12,13 +12,17 @@
 #include <SDL2/SDL.h>
 #include <SDL2_ttf/SDL_ttf.h>
 
-#include "corewar.h"
-
+#define MEMORY_SHARING 0
 #define WINDOW_TITLE "Corewar Visualiser"
 #define WINDOW_WIDTH 1440
 #define WINDOW_HEIGHT 900
-#define QUAD_SIZE 15
+#define QUAD_SIZE 12
 #define GRID_SIZE 64
+
+typedef struct s_shared {
+    void *shmem;
+    int shmid;
+} t_shared;
 
 typedef enum e_player_id {
     NO_PLAYER,
@@ -49,8 +53,9 @@ typedef struct s_text {
 } t_text;
 
 /*
- * Global variable declarations for the windowing context
+ * Global variable declarations for memory sharing and windowing context
  */
+extern t_shared g_shared;
 extern SDL_Window *g_window;
 extern SDL_Renderer *g_renderer;
 
@@ -70,5 +75,11 @@ void cw_handle_event(SDL_Event *, _Bool *);
  */
 SDL_Color cw_player_color(unsigned char);
 void cw_render_grid(t_frameset *, unsigned char (*)[GRID_SIZE]);
+
+/*
+ * Memory sharing functions
+ */
+void cw_start_shared_mem(t_shared *);
+void cw_clean_shared_mem(t_shared *);
 
 #endif

@@ -8,6 +8,9 @@
 
 #include "visualiser.h"
 
+/*
+ * Entrypoint that provides the main event loop
+ */
 int main(void)
 {
     _Bool quit = 0;

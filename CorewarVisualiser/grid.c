@@ -52,18 +52,14 @@ SDL_Color cw_player_color(unsigned char player_id)
 /*
  * Render the player grid
  */
-void cw_render_grid(t_frameset *frameset, unsigned char grid[][GRID_SIZE])
+void cw_render_grid(t_frameset *set, unsigned char grid[][GRID_SIZE])
 {
-    t_position player_pos = {frameset->pos.x, frameset->pos.y};
+    t_position player_pos = {set->pos.x, set->pos.y};
 
-    /*
-     * Static variables are initialized to zero on first function call
-     */
+    // Static variables are initialized to zero on first function call
     static _Bool first_call;
 
-    /*
-     * At the very first call, the values of the grid are set to NO_PLAYER
-     */
+    // At the very first call, the values of the grid are set to NO_PLAYER
     if (!first_call) {
         memset(grid, NO_PLAYER, sizeof(grid[0][0]) * GRID_SIZE * GRID_SIZE);
         first_call = 1;
@@ -85,14 +81,14 @@ void cw_render_grid(t_frameset *frameset, unsigned char grid[][GRID_SIZE])
                                             .w = QUAD_SIZE,
                                             .h = QUAD_SIZE}));
 
-            player_pos.x = frameset->pos.x + QUAD_OFFSET(x);
+            player_pos.x = set->pos.x + QUAD_OFFSET(x);
         }
-        player_pos.x = frameset->pos.x;
-        player_pos.y = frameset->pos.y + QUAD_OFFSET(y);
+        player_pos.x = set->pos.x;
+        player_pos.y = set->pos.y + QUAD_OFFSET(y);
     }
 
-    frameset->w = frameset->pos.x + QUAD_OFFSET(GRID_SIZE - 1);
-    frameset->h = frameset->pos.y + QUAD_OFFSET(GRID_SIZE - 1);
+    set->w = set->pos.x + QUAD_OFFSET(GRID_SIZE - 1);
+    set->h = set->pos.y + QUAD_OFFSET(GRID_SIZE - 1);
 
     SDL_RenderPresent(g_renderer);
 }

@@ -8,6 +8,9 @@
 
 #include "visualiser.h"
 
+/*
+ * Set the quit variable to 1 (true) if the SDL_QUIT event is triggered
+ */
 void cw_handle_event(SDL_Event *event, _Bool *quit)
 {
     SDL_WaitEvent(event);

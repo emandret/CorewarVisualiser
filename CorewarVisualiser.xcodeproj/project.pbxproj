@@ -10,6 +10,7 @@
 		88032BE42167FED20026CD9E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 88032BE32167FED20026CD9E /* main.c */; };
 		88032BEE2167FF8A0026CD9E /* grid.c in Sources */ = {isa = PBXBuildFile; fileRef = 88032BED2167FF8A0026CD9E /* grid.c */; };
 		88032BF0216804B90026CD9E /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 88032BEF216804B90026CD9E /* init.c */; };
+		8833F2A22169280E0024DEC8 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 8833F2A12169280E0024DEC8 /* memory.c */; };
 		88FD7D95216811B50036B8A4 /* event.c in Sources */ = {isa = PBXBuildFile; fileRef = 88FD7D94216811B50036B8A4 /* event.c */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		88032BEC2167FF520026CD9E /* corewar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = corewar.h; sourceTree = "<group>"; };
 		88032BED2167FF8A0026CD9E /* grid.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grid.c; sourceTree = "<group>"; };
 		88032BEF216804B90026CD9E /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		8833F2A12169280E0024DEC8 /* memory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
 		88FD7D94216811B50036B8A4 /* event.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = event.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				88032BED2167FF8A0026CD9E /* grid.c */,
 				88032BEF216804B90026CD9E /* init.c */,
 				88FD7D94216811B50036B8A4 /* event.c */,
+				8833F2A12169280E0024DEC8 /* memory.c */,
 			);
 			path = CorewarVisualiser;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				88032BF0216804B90026CD9E /* init.c in Sources */,
 				88032BE42167FED20026CD9E /* main.c in Sources */,
+				8833F2A22169280E0024DEC8 /* memory.c in Sources */,
 				88FD7D95216811B50036B8A4 /* event.c in Sources */,
 				88032BEE2167FF8A0026CD9E /* grid.c in Sources */,
 			);

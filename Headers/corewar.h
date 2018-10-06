@@ -9,11 +9,14 @@
 #ifndef COREWAR_H
 #define COREWAR_H
 
+#include <stddef.h>
+
 #define MAX_PLAYERS 4
 #define PROG_NAME_LENGTH 128
 #define COMMENT_LENGTH 2048
 #define MEM_SIZE (4 * 1024)
 #define CHAMP_MAX_SIZE (MEM_SIZE / 6)
+#define FLAG_START 16
 
 typedef struct s_list {
     void *content;
@@ -44,7 +47,7 @@ typedef struct s_vm {
     unsigned int dump_cycle;
     t_list *processes;
     unsigned char mem[MEM_SIZE];
-    unsigned char mem_owner[MEM_SIZE];
+    unsigned char mem_owner[4096];
     unsigned int cycle;
     unsigned int cycle_to_die;
     int cycle_to_die_delta;
