@@ -13,7 +13,7 @@
  */
 void cw_handle_event(SDL_Event *event, _Bool *quit)
 {
-    SDL_WaitEvent(event);
+    SDL_PollEvent(event);
 
     switch (event->type) {
         case SDL_QUIT:
