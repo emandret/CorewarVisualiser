@@ -9,9 +9,14 @@
 #include "visualiser.h"
 
 /*
+ * Compute the quad offset related to the index in the grid
+ */
+#define QUAD_OFFSET(i) ((i + 1) * (QUAD_SIZE + QUAD_SIZE / 6))
+
+/*
  * Private color variables
  */
-static const SDL_Color white = {255, 255, 255, 255};
+static const SDL_Color gray = {55, 55, 55, 255};
 static const SDL_Color red = {255, 0, 0, 255};
 static const SDL_Color green = {0, 255, 0, 255};
 static const SDL_Color blue = {0, 0, 255, 255};
@@ -26,7 +31,7 @@ SDL_Color cw_player_color(unsigned char player_id)
 {
     switch (player_id) {
         case NO_PLAYER:
-            return white;
+            return gray;
         case PLAYER_1:
             return red;
         case PLAYER_2:
@@ -60,7 +65,7 @@ void cw_render_grid(t_frameset *frameset, unsigned char grid[][GRID_SIZE])
      * At the very first call, the values of the grid are set to NO_PLAYER
      */
     if (!first_call) {
-        memset(grid, 8, sizeof(grid[0][0]) * GRID_SIZE * GRID_SIZE);
+        memset(grid, NO_PLAYER, sizeof(grid[0][0]) * GRID_SIZE * GRID_SIZE);
         first_call = 1;
     }
 
@@ -80,14 +85,14 @@ void cw_render_grid(t_frameset *frameset, unsigned char grid[][GRID_SIZE])
                                             .w = QUAD_SIZE,
                                             .h = QUAD_SIZE}));
 
-            player_pos.x = x * QUAD_SIZE;
+            player_pos.x = frameset->pos.x + QUAD_OFFSET(x);
         }
         player_pos.x = frameset->pos.x;
-        player_pos.y = y * QUAD_SIZE;
+        player_pos.y = frameset->pos.y + QUAD_OFFSET(y);
     }
 
-    frameset->h = player_pos.x + QUAD_SIZE;
-    frameset->w = player_pos.y + QUAD_SIZE;
+    frameset->w = frameset->pos.x + QUAD_OFFSET(GRID_SIZE - 1);
+    frameset->h = frameset->pos.y + QUAD_OFFSET(GRID_SIZE - 1);
 
     SDL_RenderPresent(g_renderer);
 }
