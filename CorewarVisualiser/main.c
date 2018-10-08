@@ -19,12 +19,8 @@ int main(void)
     // Initialize global variables
     cw_init();
 
-    // Clear screen
-    SDL_SetRenderDrawColor(g_renderer, 0, 0, 0, 255);
-    SDL_RenderClear(g_renderer);
-
     // Grid frameset
-    t_frameset frameset = {{0, 0}, 0, 0};
+    t_frameset frameset = {{273, 3}, 0, 0};
 
     // Initialize the grid
     unsigned char grid[GRID_SIZE][GRID_SIZE];

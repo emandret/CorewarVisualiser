@@ -47,7 +47,7 @@ typedef struct s_vm {
     unsigned int dump_cycle;
     t_list *processes;
     unsigned char mem[MEM_SIZE];
-    unsigned char mem_owner[4096];
+    unsigned char mem_owner[MEM_SIZE];
     unsigned int cycle;
     unsigned int cycle_to_die;
     int cycle_to_die_delta;
