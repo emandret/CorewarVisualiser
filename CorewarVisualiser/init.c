@@ -12,7 +12,6 @@
  * Static storage duration objects are initialized to zero but it is always
  * better to explicitly initialize variables
  */
-t_shared g_shared = {0};
 SDL_Window *g_window = NULL;
 SDL_Renderer *g_renderer = NULL;
 

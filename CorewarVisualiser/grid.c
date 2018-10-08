@@ -93,6 +93,13 @@ void cw_render_grid(t_frameset *set, unsigned char grid[][GRID_SIZE])
             // Get the player color
             SDL_Color player_color = cw_player_color(grid[y][x]);
 
+            // Lighten the cursor color for the current cycle printing
+            if (MEMORY_SHARING &&
+                ((t_vm *) g_shared.shmem)->mem_cycles[y * GRID_SIZE + x] >
+                ((t_vm *) g_shared.shmem)->cycle - CYCLE_TO_PRINT) {
+                player_color = cw_lighten_color(player_color, .5);
+            }
+
             // Set color
             SDL_SetRenderDrawColor(g_renderer,
                                    player_color.r,

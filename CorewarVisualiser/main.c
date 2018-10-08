@@ -39,9 +39,6 @@ int main(void)
         cw_render_grid(&frameset, grid);
     }
 
-    // Grid dimensions updated in frameset structure
-    printf("grid width = %d, grid height = %d\n", frameset.w, frameset.h);
-
     cw_cleanup();
     return 0;
 }

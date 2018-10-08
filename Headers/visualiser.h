@@ -14,7 +14,7 @@
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
 
-#define MEMORY_SHARING 0
+#define MEMORY_SHARING 1
 #define WINDOW_TITLE "Corewar Visualiser"
 #define WINDOW_WIDTH 1440
 #define WINDOW_HEIGHT 900
@@ -89,5 +89,10 @@ void cw_clean_shared_mem(t_shared *);
  * Background functions
  */
 void cw_render_bg(const char *);
+
+/*
+ * Utility functions
+ */
+SDL_Color cw_lighten_color(SDL_Color, double);
 
 #endif

@@ -16,6 +16,7 @@
 #define COMMENT_LENGTH 2048
 #define MEM_SIZE (4 * 1024)
 #define CHAMP_MAX_SIZE (MEM_SIZE / 6)
+#define CYCLE_TO_PRINT 200
 #define FLAG_START 16
 
 typedef struct s_list {
@@ -48,6 +49,7 @@ typedef struct s_vm {
     t_list *processes;
     unsigned char mem[MEM_SIZE];
     unsigned char mem_owner[MEM_SIZE];
+    unsigned int mem_cycles[MEM_SIZE];
     unsigned int cycle;
     unsigned int cycle_to_die;
     int cycle_to_die_delta;

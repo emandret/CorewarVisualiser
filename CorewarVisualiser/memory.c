@@ -17,6 +17,11 @@
 #define BUF_SHMID 1024
 
 /*
+ * The shared stucture global variable initialized recursively to zero
+ */
+t_shared g_shared = {0};
+
+/*
  * Start System V IPC memory sharing
  */
 void cw_start_shared_mem(t_shared *shared)
