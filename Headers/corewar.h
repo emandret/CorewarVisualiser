@@ -58,6 +58,7 @@ typedef struct s_vm {
     unsigned int lives_amount;
     unsigned int next_process_id;
     unsigned int last_player;
+    t_player winner;
 } t_vm;
 
 #endif

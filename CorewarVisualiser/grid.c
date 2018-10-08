@@ -72,9 +72,12 @@ void cw_fill_grid(unsigned char grid[][GRID_SIZE])
 /*
  * Render the player grid
  */
-void cw_render_grid(t_frameset *set, unsigned char grid[][GRID_SIZE])
+void cw_render_grid(unsigned int pos_x,
+                    unsigned int pos_y,
+                    unsigned char grid[][GRID_SIZE])
 {
-    t_position player_pos = {set->pos.x, set->pos.y};
+    // Position of each box
+    unsigned int player_pos_x = pos_x, player_pos_y = pos_y;
 
     // Static variables are initialized to zero on first function call
     static _Bool first_call;
@@ -109,20 +112,14 @@ void cw_render_grid(t_frameset *set, unsigned char grid[][GRID_SIZE])
 
             // Draw the filled rectangle
             SDL_RenderFillRect(g_renderer,
-                               &((SDL_Rect){.x = player_pos.x,
-                                            .y = player_pos.y,
+                               &((SDL_Rect){.x = player_pos_x,
+                                            .y = player_pos_y,
                                             .w = QUAD_SIZE,
                                             .h = QUAD_SIZE}));
 
-            player_pos.x = set->pos.x + QUAD_OFFSET(x);
+            player_pos_x = pos_x + QUAD_OFFSET(x);
         }
-        player_pos.x = set->pos.x;
-        player_pos.y = set->pos.y + QUAD_OFFSET(y);
+        player_pos_x = pos_x;
+        player_pos_y = pos_y + QUAD_OFFSET(y);
     }
-
-    set->w = set->pos.x + QUAD_OFFSET(GRID_SIZE - 1);
-    set->h = set->pos.y + QUAD_OFFSET(GRID_SIZE - 1);
-
-    // Render the grid
-    SDL_RenderPresent(g_renderer);
 }

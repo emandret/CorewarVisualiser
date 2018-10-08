@@ -14,7 +14,7 @@
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
 
-#define MEMORY_SHARING 1
+#define MEMORY_SHARING 0
 #define WINDOW_TITLE "Corewar Visualiser"
 #define WINDOW_WIDTH 1440
 #define WINDOW_HEIGHT 900
@@ -22,8 +22,8 @@
 #define GRID_SIZE 64
 
 typedef struct s_shared {
-    void *shmem;
     int shmid;
+    void *shmem;
 } t_shared;
 
 typedef enum e_player_id {
@@ -36,22 +36,10 @@ typedef enum e_player_id {
     PLAYER_6
 } t_player_id;
 
-typedef struct s_position {
-    unsigned int x;
-    unsigned int y;
-} t_position;
-
-typedef struct s_frameset {
-    t_position pos;
-    unsigned int w;
-    unsigned int h;
-} t_frameset;
-
 typedef struct s_text {
-    t_position pos;
-    SDL_Color color;
+    char *body;
     TTF_Font *font;
-    char *value;
+    SDL_Color color;
 } t_text;
 
 /*
@@ -77,7 +65,7 @@ void cw_handle_event(SDL_Event *, _Bool *);
  */
 SDL_Color cw_player_color(unsigned char);
 void cw_fill_grid(unsigned char (*)[GRID_SIZE]);
-void cw_render_grid(t_frameset *, unsigned char (*)[GRID_SIZE]);
+void cw_render_grid(unsigned int, unsigned int, unsigned char (*)[GRID_SIZE]);
 
 /*
  * Memory sharing functions
@@ -89,6 +77,11 @@ void cw_clean_shared_mem(t_shared *);
  * Background functions
  */
 void cw_render_bg(const char *);
+
+/*
+ * Text functions
+ */
+void cw_render_text(unsigned int, unsigned int, t_text);
 
 /*
  * Utility functions
