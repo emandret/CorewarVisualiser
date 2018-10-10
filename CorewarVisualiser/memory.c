@@ -28,8 +28,13 @@ void cw_start_shared_mem(t_shared *shared)
 {
     char buf[BUF_SHMID];
 
+    if (!fgets(buf, BUF_SHMID, stdin)) {
+        fprintf(stderr, "fgets error: null pointer returned");
+        exit(1);
+    }
+
     // Retrieve the shmid
-    shared->shmid = atoi(fgets(buf, BUF_SHMID, stdin));
+    shared->shmid = atoi(buf);
 
     // Attach to shared memory
     shared->shmem = shmat(shared->shmid, NULL, 0);
