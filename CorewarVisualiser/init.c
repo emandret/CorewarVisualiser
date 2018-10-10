@@ -16,6 +16,12 @@ SDL_Window *g_window = NULL;
 SDL_Renderer *g_renderer = NULL;
 
 /*
+ * Same for fonts
+ */
+TTF_Font *g_font_title = NULL;
+TTF_Font *g_font_text = NULL;
+
+/*
  * Initializiation
  */
 void cw_init(void)
@@ -58,6 +64,16 @@ void cw_init(void)
 
     if (!g_renderer) {
         fprintf(stderr, "Could not create renderer: %s\n", SDL_GetError());
+        exit(1);
+    }
+
+    if (!(g_font_title = TTF_OpenFont("Fonts/calligraphr.ttf", 50))) {
+        fprintf(stderr, "Could not load font: calligraphr.ttf");
+        exit(1);
+    }
+
+    if (!(g_font_text = TTF_OpenFont("Fonts/desonanz.ttf", 14))) {
+        fprintf(stderr, "Could not load font: desonanz.ttf");
         exit(1);
     }
 }

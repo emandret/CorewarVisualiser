@@ -9,20 +9,16 @@
 #include "visualiser.h"
 
 /*
- * Compute the quad offset related to the index in the grid
+ * Global color variables
  */
-#define QUAD_OFFSET(i) ((i + 1) * (QUAD_SIZE + QUAD_SIZE / 6))
-
-/*
- * Private color variables
- */
-static const SDL_Color gray = {50, 50, 50, 125};
-static const SDL_Color red = {255, 0, 75, 225};
-static const SDL_Color green = {0, 255, 100, 225};
-static const SDL_Color blue = {50, 225, 255, 225};
-static const SDL_Color yellow = {255, 255, 0, 225};
-static const SDL_Color purple = {255, 0, 255, 225};
-static const SDL_Color orange = {255, 100, 0, 225};
+const SDL_Color g_gray = {50, 50, 50, 125};
+const SDL_Color g_white = {255, 255, 255, 225};
+const SDL_Color g_red = {255, 0, 75, 225};
+const SDL_Color g_green = {0, 255, 100, 225};
+const SDL_Color g_blue = {50, 225, 255, 225};
+const SDL_Color g_yellow = {255, 255, 0, 225};
+const SDL_Color g_purple = {255, 0, 255, 225};
+const SDL_Color g_orange = {255, 100, 0, 225};
 
 /*
  * Return the color associated to a player
@@ -31,19 +27,19 @@ SDL_Color cw_player_color(unsigned char player_id)
 {
     switch (player_id) {
         case NO_PLAYER:
-            return gray;
+            return g_gray;
         case PLAYER_1:
-            return red;
+            return g_red;
         case PLAYER_2:
-            return green;
+            return g_green;
         case PLAYER_3:
-            return blue;
+            return g_blue;
         case PLAYER_4:
-            return yellow;
+            return g_yellow;
         case PLAYER_5:
-            return purple;
+            return g_purple;
         case PLAYER_6:
-            return orange;
+            return g_orange;
         default:
             return (SDL_Color){0};
     }

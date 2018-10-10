@@ -36,12 +36,13 @@
 		88032BEC2167FF520026CD9E /* corewar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = corewar.h; sourceTree = "<group>"; };
 		88032BED2167FF8A0026CD9E /* grid.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grid.c; sourceTree = "<group>"; };
 		88032BEF216804B90026CD9E /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		88112A82216D4E8600572687 /* desonanz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = desonanz.ttf; sourceTree = "<group>"; };
+		88112A83216D621700572687 /* bg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg2.jpg; sourceTree = "<group>"; };
 		8833F2A12169280E0024DEC8 /* memory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
 		8878827721695E7400388FBC /* bg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bg.c; sourceTree = "<group>"; };
 		887CC41D216BAD0B0052A9F4 /* utils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
 		887CC42B216C03D50052A9F4 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		887CC42C216C04300052A9F4 /* calligraphr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calligraphr.ttf; sourceTree = "<group>"; };
-		887CC42D216C04300052A9F4 /* get_schwifty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = get_schwifty.ttf; sourceTree = "<group>"; };
 		887CC42E216C04630052A9F4 /* text.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = text.c; sourceTree = "<group>"; };
 		88FD7D94216811B50036B8A4 /* event.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = event.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +104,7 @@
 		8878827C2169608900388FBC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				88112A83216D621700572687 /* bg2.jpg */,
 				887CC42B216C03D50052A9F4 /* bg.jpg */,
 			);
 			path = Images;
@@ -111,8 +113,8 @@
 		887CC429216C03920052A9F4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				88112A82216D4E8600572687 /* desonanz.ttf */,
 				887CC42C216C04300052A9F4 /* calligraphr.ttf */,
-				887CC42D216C04300052A9F4 /* get_schwifty.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
